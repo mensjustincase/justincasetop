@@ -60,17 +60,17 @@ header {
 .hero-image-area {
     width: 100%;
     max-width: 900px;
+    height: 300px;    /* 高さを300pxに固定（ここを調整してください） */
     margin: 0 auto;
     overflow: hidden;
     border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 .main-visual-img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover; /* 枠に合わせて画像を中央で切り抜きます */
     display: block;
-    object-fit: cover;
 }
 
 /* --- コンセプト --- */
