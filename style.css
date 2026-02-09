@@ -75,6 +75,41 @@ header {
     display: block;
 }
 
+/* --- Concept (真ん中寄せ・タイポグラフィ調整) --- */
+.concept {
+    text-align: center; /* 全体を真ん中寄せ */
+    background: #fff;
+    padding: 80px 20px; /* 上下にゆとりを持たせる */
+}
+
+.concept h2 {
+    font-size: clamp(1.2rem, 4.5vw, 2rem);
+    font-weight: 700;
+    letter-spacing: 0.1em; /* 文字の間隔を少し広げて高級感を出す */
+    margin-bottom: 30px;
+    color: #1a2a44;
+    position: relative;
+    display: inline-block;
+}
+
+/* タイトルの下に短い線を入れてアクセントに */
+.concept h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #3b82f6;
+    margin: 15px auto 0;
+}
+
+.concept p {
+    font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+    color: #475569;
+    line-height: 2; /* 行間を広くして読みやすく */
+    font-weight: 400;
+}
+
+
 /* --- Layout: Horizontal Column (横3列死守) --- */
 .fixed-triple-container {
     display: flex !important;
