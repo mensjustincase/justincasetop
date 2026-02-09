@@ -3,120 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brand Name | 私らしく、心地よく。</title>
-    <style>
-        /* デザインのポイント：余白と明るい背景 */
-        body { 
-            font-family: "Helvetica Neue", Arial, "Hiragino Sans", sans-serif; 
-            color: #444; 
-            line-height: 1.6; 
-            margin: 0; 
-            background-color: #fff;
-        }
-        
-        /* ヒーローエリア：視覚的に訴える */
-        header { 
-            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-            padding: 80px 20px; 
-            text-align: center; 
-        }
-        header h1 { font-size: 2rem; letter-spacing: 0.1em; margin-bottom: 10px; }
-        header p { font-size: 1rem; color: #777; }
-
-        section { padding: 50px 20px; max-width: 800px; margin: auto; }
-        
-        /* 見出し：シンプルでおしゃれに */
-        h2 { 
-            font-size: 1.5rem; 
-            text-align: center; 
-            margin-bottom: 40px; 
-            position: relative;
-        }
-        h2::after {
-            content: "";
-            display: block;
-            width: 30px;
-            height: 2px;
-            background: #aaa;
-            margin: 15px auto 0;
-        }
-
-        /* 商品紹介カード */
-        .product-card {
-            background: #fafafa;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        /* お客様の声：SNSっぽく */
-        .voice-container { display: flex; flex-direction: column; gap: 15px; }
-        .voice-item { 
-            background: white; 
-            border: 1px solid #eee; 
-            padding: 20px; 
-            border-radius: 10px; 
-            font-size: 0.9rem;
-        }
-        .user-tag { color: #9a9a9a; font-size: 0.8rem; display: block; margin-bottom: 5px; }
-
-        footer { text-align: center; padding: 30px; background: #fafafa; color: #999; font-size: 0.7rem; }
-        
-        /* ボタン */
-        .cta-button {
-            display: inline-block;
-            background: #333;
-            color: #fff;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 30px;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-    </style>
+    <title>JUSTINCASE | 余裕は、見えないところで作られる。</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <p>忙しい毎日を、もっと好きになる。</p>
-        <h1>Brand New Standard</h1>
-        <a href="#" class="cta-button">今すぐチェック</a>
+        <div class="logo">JUSTINCASE</div>
     </header>
 
-    <section id="product">
-        <h2>Features</h2>
-        <div class="product-card">
-            <p>ここに商品の画像が入ります</p>
-            <p><strong>「これ欲しかった」を形に。</strong><br>
-            20代後半からのライフスタイルに寄り添う、<br>
-            シンプルで機能的なデザイン。</p>
-        </div>
-    </section>
-
-    <section id="vision">
-        <h2>Our Vision</h2>
-        <p style="text-align: center;">無理をせず、自分らしく。<br>
-        私たちが目指すのは、日常のちょっとした瞬間が<br>
-        特別に変わるような体験を提供することです。</p>
-    </section>
-
-    <section id="voices" style="background-color: #fdfdfd;">
-        <h2>Review</h2>
-        <div class="voice-container">
-            <div class="voice-item">
-                <span class="user-tag">@cosme_loveさん（28歳/事務）</span>
-                <p>デザインが可愛くて一目惚れ！使い心地も良くて、リピ確定です♡</p>
-            </div>
-            <div class="voice-item">
-                <span class="user-tag">@work_styleさん（32歳/営業）</span>
-                <p>仕事で忙しい私にとって、タイパ抜群のこのアイテムは手放せません。</p>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>余裕は、見えないところで作られる。</h1>
+            <p class="sub-copy">使わなくてもいい。でも、あったら最強。</p>
+            <div class="product-img-placeholder">
+                <p>Premium Protection for Men</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Brand Name. All Rights Reserved.</p>
-    </footer>
+    <section class="concept">
+        <div class="container">
+            <h2>その準備が、自信に変わる。</h2>
+            <p>都会の最前線で戦うあなたへ。<br>
+            予期せぬリスクを「想定内」に変える、新しい身だしなみのスタンダード。</p>
+        </div>
+    </section>
 
-</body>
-</html>
+    <section class="features">
+        <div class="container">
+            <div class="feature-item">
+                <div class="feature-text">
+                    <h3>超薄型・存在感ゼロ</h3>
+                    <p>洗練された設計で、タイトなスーツスタイルでもシルエットを崩しません。装着していることを忘れるほどの薄さです。</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-text">
+                    <h3>瞬間吸収 × 逆戻り防止</h3>
+                    <p>最先端技術が、圧倒的な安心感と持続するドライ感を実現。多忙な会議中も、移動中も、不快感を与えません。</p>
