@@ -1,4 +1,4 @@
-/* --- 共通設定 --- */
+/* --- Base Styles --- */
 * {
     margin: 0;
     padding: 0;
@@ -20,10 +20,10 @@ body {
     padding: 60px 10px;
 }
 
-/* --- ヘッダー --- */
+/* --- Header --- */
 header {
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #fff;
     border-bottom: 1px solid #eee;
     text-align: center;
     position: sticky;
@@ -37,16 +37,15 @@ header {
     color: #1a2a44;
 }
 
-/* --- ヒーローエリア (メインビジュアル) --- */
+/* --- Main Visual (Responsive Variable Height) --- */
 .hero {
-    padding: 80px 20px;
+    padding: 60px 20px;
     background: linear-gradient(180deg, #ffffff 0%, #eef2f7 100%);
     text-align: center;
 }
 
 .hero h1 {
     font-size: clamp(1.3rem, 5vw, 2.5rem);
-    font-weight: 700;
     color: #1a2a44;
     margin-bottom: 15px;
 }
@@ -54,49 +53,39 @@ header {
 .sub-copy {
     font-size: clamp(0.9rem, 3vw, 1.1rem);
     color: #666;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .hero-image-area {
-    width: 100%;
-    max-width: 900px;
-    height: 300px;    /* 高さを300pxに固定（ここを調整してください） */
+    width: 95%;
+    max-width: 800px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    /* 横:縦を21:9に維持（画面幅に合わせて縮む） */
+    aspect-ratio: 21 / 9; 
 }
 
 .main-visual-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 枠に合わせて画像を中央で切り抜きます */
+    object-fit: cover;
+    object-position: center;
     display: block;
 }
 
-/* --- コンセプト --- */
-.concept {
-    text-align: center;
-    background: #fff;
-    padding: 40px 20px;
-}
-
-.concept h2 {
-    font-size: clamp(1.1rem, 4vw, 1.8rem);
-    margin-bottom: 20px;
-    color: #1a2a44;
-}
-
-/* --- 横並び絶対死守コンテナ --- */
+/* --- Layout: Horizontal Column (横3列死守) --- */
 .fixed-triple-container {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important;
+    flex-wrap: nowrap !important; /* スマホでも絶対に縦に落ちない */
     justify-content: space-between;
     gap: 8px;
     width: 100%;
 }
 
-/* --- お悩み共感 (丸い画像) --- */
+/* --- Pain Points (Circle Images) --- */
 .pain-points { background: #fff; }
 .section-title {
     text-align: center;
@@ -105,12 +94,7 @@ header {
     color: #1a2a44;
 }
 
-.pain-item {
-    flex: 1;
-    min-width: 0;
-    text-align: center;
-}
-
+.pain-item { flex: 1; min-width: 0; text-align: center; }
 .circle-image {
     width: 80%;
     margin: 0 auto 15px;
@@ -120,13 +104,8 @@ header {
     border: 2px solid #eef2f7;
     background: #f1f5f9;
 }
-
-.circle-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+.circle-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.img-placeholder-circle { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #cbd5e1; font-size: 0.6rem; }
 
 .pain-desc {
     font-size: clamp(0.55rem, 1.8vw, 0.85rem);
@@ -134,23 +113,22 @@ header {
     line-height: 1.4;
 }
 
-/* --- 特徴セクション (カード) --- */
+/* --- Features (Cards) --- */
 .features { background: #f1f5f9; }
 .feature-card {
     flex: 1;
     min-width: 0;
     background: #fff;
-    padding: 20px 8px;
+    padding: 15px 8px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     text-align: center;
 }
+.feature-card .icon { font-size: 0.9rem; color: #3b82f6; font-weight: 700; margin-bottom: 8px; }
+.feature-card h3 { font-size: clamp(0.65rem, 2.3vw, 0.95rem); color: #1a2a44; margin-bottom: 8px; }
+.feature-card p { font-size: clamp(0.55rem, 1.8vw, 0.8rem); color: #64748b; line-height: 1.4; }
 
-.feature-card .icon { font-size: 1rem; color: #3b82f6; font-weight: 700; margin-bottom: 10px; }
-.feature-card h3 { font-size: clamp(0.65rem, 2.3vw, 1rem); color: #1a2a44; margin-bottom: 10px; }
-.feature-card p { font-size: clamp(0.55rem, 1.8vw, 0.8rem); color: #64748b; }
-
-/* --- 使い方セクション (画像ステップ) --- */
+/* --- How to Use (Step Images) --- */
 .how-to-use { background: #fff; }
 .usage-item { flex: 1; min-width: 0; }
 .usage-image-wrapper {
@@ -161,27 +139,26 @@ header {
     background-color: #f1f5f9;
     margin-bottom: 15px;
 }
-
-.step-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+.step-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .step-num { font-size: 0.6rem; color: #3b82f6; font-weight: 700; display: block; margin-bottom: 4px; }
-.usage-text h3 { font-size: clamp(0.65rem, 2.3vw, 1rem); margin-bottom: 8px; }
+.usage-text h3 { font-size: clamp(0.65rem, 2.3vw, 0.95rem); margin-bottom: 8px; }
 .usage-text p { font-size: clamp(0.55rem, 1.8vw, 0.8rem); color: #64748b; }
 
-/* --- CTA & フッター --- */
+/* --- CTA & Footer --- */
 .cta { text-align: center; background: #1a2a44; color: #fff; padding: 60px 20px; }
 .btn { display: inline-block; padding: 12px 30px; background: #3b82f6; color: #fff; text-decoration: none; border-radius: 4px; font-weight: 700; margin-top: 20px; }
 footer { padding: 30px; text-align: center; font-size: 0.7rem; color: #999; }
 
-/* --- デスクトップ時の調整 --- */
+/* --- Tablet / PC Adjustments --- */
 @media (min-width: 768px) {
     .container { padding: 100px 40px; }
     .fixed-triple-container { gap: 30px; }
     .feature-card, .usage-item { padding: 40px 20px; }
     .circle-image { width: 160px; }
+    .hero-image-area { aspect-ratio: 21 / 7; } /* PCではさらに横長でスリムに */
+}
+
+@media (max-width: 480px) {
+    .hero-image-area { aspect-ratio: 16 / 9; width: 100%; border-radius: 0; }
 }
