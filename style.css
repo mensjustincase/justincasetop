@@ -7,15 +7,15 @@
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
-    line-height: 1.8;
+    line-height: 1.6;
     color: #333;
     background-color: #f8fafc;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 100px 40px;
+    padding: 80px 20px;
 }
 
 /* Header */
@@ -40,24 +40,24 @@ header {
 
 /* Hero Section */
 .hero {
-    padding-top: 160px;
-    padding-bottom: 80px;
+    padding-top: 140px;
+    padding-bottom: 60px;
     background: linear-gradient(180deg, #ffffff 0%, #eef2f7 100%);
     text-align: center;
 }
 
 .hero h1 {
-    font-size: clamp(1.5rem, 5vw, 2.8rem);
+    font-size: clamp(1.4rem, 5vw, 2.5rem);
     font-weight: 700;
     color: #1a2a44;
-    margin-bottom: 20px;
-    letter-spacing: -0.02em;
+    margin-bottom: 15px;
+    padding: 0 10px;
 }
 
 .sub-copy {
-    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
     color: #555;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .img-placeholder {
@@ -69,133 +69,104 @@ header {
     color: #cbd5e1;
     font-weight: bold;
     border-radius: 8px;
+    font-size: 0.8rem;
 }
 
-/* Concept */
-.concept {
-    text-align: center;
-    background: #fff;
-}
-
-.concept h2 {
-    font-size: clamp(1.2rem, 4vw, 2rem);
-    margin-bottom: 30px;
-    color: #1a2a44;
-}
-
-/* Features (Always 3 Columns) */
-.features {
-    background: #f1f5f9;
-}
-
-.feature-flex-container {
+/* Common Triple Column Layout (横並び強制) */
+.triple-column-container {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 20px;
+    flex-direction: row;
+    flex-wrap: nowrap; /* 絶対に折り返さない */
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
 }
+
+/* Features */
+.features { background: #f1f5f9; }
 
 .feature-card {
-    flex: 1;
+    width: calc(33.333% - 7px);
+    flex: 0 0 auto;
     background: #fff;
-    padding: 30px 15px;
+    padding: 20px 10px;
     border-radius: 12px;
     text-align: center;
-    min-width: 0;
 }
 
 .feature-card .icon {
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
     font-weight: 700;
     color: #3b82f6;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .feature-card h3 {
-    font-size: clamp(0.75rem, 2.5vw, 1.1rem);
+    font-size: clamp(0.7rem, 2.2vw, 1rem);
     color: #1a2a44;
-    margin-bottom: 10px;
-    white-space: nowrap;
+    margin-bottom: 8px;
+    word-break: break-all;
 }
 
 .feature-card p {
-    font-size: clamp(0.7rem, 2vw, 0.9rem);
+    font-size: clamp(0.6rem, 1.8vw, 0.85rem);
     color: #64748b;
+    line-height: 1.4;
 }
 
-/* How to Use (Always 3 Columns) */
-.how-to-use {
-    background: #fff;
-}
-
+/* How to Use */
+.how-to-use { background: #fff; }
 .section-title {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 50px;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 40px;
     color: #1a2a44;
 }
 
-.usage-flex-container {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 25px;
-}
-
 .usage-item {
-    flex: 1;
-    min-width: 0;
+    width: calc(33.333% - 7px);
+    flex: 0 0 auto;
 }
 
-.usage-image-wrapper {
-    margin-bottom: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
+.usage-image-wrapper { margin-bottom: 15px; }
 
 .step-num {
     display: block;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     color: #3b82f6;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 .usage-text h3 {
-    font-size: clamp(0.8rem, 2.5vw, 1.2rem);
-    margin-bottom: 10px;
+    font-size: clamp(0.75rem, 2.2vw, 1.1rem);
+    margin-bottom: 8px;
 }
 
 .usage-text p {
-    font-size: clamp(0.7rem, 2vw, 0.9rem);
+    font-size: clamp(0.6rem, 1.8vw, 0.85rem);
     color: #64748b;
+    line-height: 1.4;
 }
 
-/* CTA Section */
-.cta {
-    text-align: center;
-    background: #1a2a44;
-    color: #fff;
-}
-
+/* CTA & Footer */
+.cta { text-align: center; background: #1a2a44; color: #fff; }
 .btn {
     display: inline-block;
-    padding: 15px 40px;
+    padding: 12px 30px;
     background-color: #3b82f6;
     color: #fff;
     text-decoration: none;
     font-weight: 700;
     border-radius: 4px;
-    margin-top: 30px;
+    margin-top: 20px;
+    font-size: 0.9rem;
 }
 
-/* Footer */
-footer {
-    padding: 40px;
-    text-align: center;
-    font-size: 0.8rem;
-    color: #999;
-}
+footer { padding: 30px; text-align: center; font-size: 0.75rem; color: #999; }
 
-/* Mobile adjustments to keep things tight */
-@media (max-width: 600px) {
-    .container { padding: 60px 15px; }
-    .feature-flex-container, .usage-flex-container { gap: 10px; }
+/* スマホ用の最小限の調整 */
+@media (max-width: 480px) {
+    .container { padding: 50px 8px; }
+    .triple-column-container { gap: 5px; }
 }
