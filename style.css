@@ -9,13 +9,13 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.8;
     color: #333;
-    background-color: #f8fafc; /* 非常に明るいグレー */
+    background-color: #f8fafc;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 20px;
+    padding: 100px 40px;
 }
 
 /* Header */
@@ -46,19 +46,8 @@ header {
     text-align: center;
 }
 
-.brand-badge {
-    display: inline-block;
-    padding: 4px 16px;
-    background: #1a2a44;
-    color: #fff;
-    font-size: 0.75rem;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    letter-spacing: 0.1em;
-}
-
 .hero h1 {
-    font-size: 2.8rem;
+    font-size: clamp(1.5rem, 5vw, 2.8rem);
     font-weight: 700;
     color: #1a2a44;
     margin-bottom: 20px;
@@ -66,26 +55,20 @@ header {
 }
 
 .sub-copy {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 3vw, 1.25rem);
     color: #555;
     margin-bottom: 50px;
 }
 
-.hero-image-area {
-    max-width: 800px;
-    margin: 0 auto;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-}
-
-.image-box {
-    background: #fff;
-    border: 1px solid #eee;
+.img-placeholder {
+    background: #f1f5f9;
     aspect-ratio: 16 / 9;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ccc;
+    color: #cbd5e1;
     font-weight: bold;
+    border-radius: 8px;
 }
 
 /* Concept */
@@ -95,62 +78,94 @@ header {
 }
 
 .concept h2 {
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 4vw, 2rem);
     margin-bottom: 30px;
     color: #1a2a44;
 }
 
-/* Features (Card Style) */
+/* Features (Always 3 Columns) */
 .features {
     background: #f1f5f9;
 }
 
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+.feature-flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
 }
 
 .feature-card {
+    flex: 1;
     background: #fff;
-    padding: 40px;
+    padding: 30px 15px;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-    transition: transform 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
+    text-align: center;
+    min-width: 0;
 }
 
 .feature-card .icon {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: #3b82f6; /* 清潔感のあるブルー */
-    margin-bottom: 20px;
+    color: #3b82f6;
+    margin-bottom: 15px;
 }
 
 .feature-card h3 {
-    margin-bottom: 15px;
+    font-size: clamp(0.75rem, 2.5vw, 1.1rem);
     color: #1a2a44;
+    margin-bottom: 10px;
+    white-space: nowrap;
 }
 
-/* Technology Section */
-.how-it-works {
+.feature-card p {
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+    color: #64748b;
+}
+
+/* How to Use (Always 3 Columns) */
+.how-to-use {
     background: #fff;
 }
 
-.tech-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: #1a2a44;
 }
 
-.tech-text h2 {
-    font-size: 2rem;
+.usage-flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 25px;
+}
+
+.usage-item {
+    flex: 1;
+    min-width: 0;
+}
+
+.usage-image-wrapper {
     margin-bottom: 20px;
-    color: #1a2a44;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.step-num {
+    display: block;
+    font-size: 0.75rem;
+    color: #3b82f6;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.usage-text h3 {
+    font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+    margin-bottom: 10px;
+}
+
+.usage-text p {
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+    color: #64748b;
 }
 
 /* CTA Section */
@@ -162,121 +177,25 @@ header {
 
 .btn {
     display: inline-block;
-    padding: 18px 60px;
+    padding: 15px 40px;
     background-color: #3b82f6;
     color: #fff;
     text-decoration: none;
     font-weight: 700;
     border-radius: 4px;
     margin-top: 30px;
-    transition: background 0.3s ease;
 }
-
-.btn:hover {
-    background-color: #2563eb;
-}
-
-/* Section Title Style */
-.section-title {
-    text-align: center;
-    font-size: 2rem;
-    color: #1a2a44;
-    margin-bottom: 60px;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 40px;
-    height: 2px;
-    background: #3b82f6;
-    margin: 15px auto 0;
-}
-
-/* How to Use Grid */
-.how-to-use {
-    background-color: #ffffff;
-}
-
-.usage-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-.usage-card {
-    text-align: left;
-}
-
-.usage-image {
-    width: 100%;
-    margin-bottom: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.img-placeholder {
-    background: #f1f5f9;
-    aspect-ratio: 4 / 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #cbd5e1;
-    font-weight: 700;
-}
-
-.usage-text {
-    padding: 0 10px;
-}
-
-.step-num {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #3b82f6;
-    margin-bottom: 5px;
-    letter-spacing: 0.1em;
-}
-
-.usage-text h3 {
-    font-size: 1.25rem;
-    color: #1a2a44;
-    margin-bottom: 12px;
-}
-
-.usage-text p {
-    font-size: 0.95rem;
-    color: #64748b;
-    line-height: 1.6;
-}
-
-/* Responsive for Mobile */
-@media (max-width: 768px) {
-    .usage-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-    
-    .section-title {
-        font-size: 1.6rem;
-    }
-}
-
-
 
 /* Footer */
 footer {
     padding: 40px;
     text-align: center;
-    font-size: 0.85rem;
-    background: #f8fafc;
+    font-size: 0.8rem;
     color: #999;
 }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2rem; }
-    .tech-content { grid-template-columns: 1fr; }
+/* Mobile adjustments to keep things tight */
+@media (max-width: 600px) {
+    .container { padding: 60px 15px; }
+    .feature-flex-container, .usage-flex-container { gap: 10px; }
 }
