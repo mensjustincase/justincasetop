@@ -10,7 +10,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8fafc;
-    overflow-x: hidden; /* スマホでの横揺れ防止 */
+    overflow-x: hidden;
 }
 
 .container {
@@ -20,10 +20,10 @@ body {
     padding: 60px 10px;
 }
 
-/* --- Header --- */
+/* --- Header & Hero --- */
 header {
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #fff;
     border-bottom: 1px solid #eee;
     text-align: center;
     position: sticky;
@@ -34,11 +34,9 @@ header {
 .logo {
     font-weight: 700;
     letter-spacing: 0.4em;
-    font-size: 1.1rem;
     color: #1a2a44;
 }
 
-/* --- Hero Section --- */
 .hero {
     padding: 80px 20px;
     background: linear-gradient(180deg, #ffffff 0%, #eef2f7 100%);
@@ -47,16 +45,14 @@ header {
 
 .hero h1 {
     font-size: clamp(1.3rem, 5vw, 2.5rem);
-    font-weight: 700;
     color: #1a2a44;
-    margin-bottom: 20px;
-    letter-spacing: -0.02em;
+    margin-bottom: 15px;
 }
 
 .sub-copy {
-    font-size: clamp(0.9rem, 3vw, 1.2rem);
-    color: #555;
-    margin-bottom: 40px;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    color: #666;
+    margin-bottom: 30px;
 }
 
 .img-placeholder {
@@ -66,28 +62,28 @@ header {
     align-items: center;
     justify-content: center;
     color: #cbd5e1;
-    font-weight: bold;
     border-radius: 8px;
+    font-weight: bold;
     font-size: 0.8rem;
 }
 
-/* --- Concept --- */
-.concept {
+/* --- 横並び絶対死守コンテナ --- */
+.fixed-triple-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* 絶対に縦に落ちない */
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+}
+
+/* --- Pain Points Section (丸い画像) --- */
+.pain-points { background: #fff; }
+.section-title {
     text-align: center;
-    background: #fff;
-    padding: 40px 20px;
-}
-
-.concept h2 {
-    font-size: clamp(1.1rem, 4vw, 1.8rem);
-    margin-bottom: 20px;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    margin-bottom: 40px;
     color: #1a2a44;
-}
-
-
-/* --- Pain Points Section (丸い画像と説明) --- */
-.pain-points {
-    background-color: #fff;
 }
 
 .pain-item {
@@ -96,160 +92,72 @@ header {
     text-align: center;
 }
 
-/* 円形の枠の設定 */
 .circle-image {
     width: 80%;
     margin: 0 auto 15px;
-    aspect-ratio: 1 / 1; /* 正方形を維持 */
-    border-radius: 50%; /* ここで丸く切り抜く */
-    overflow: hidden;   /* 枠からはみ出た画像を隠す */
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
     border: 2px solid #eef2f7;
-    background-color: #f1f5f9; /* 万が一画像が読み込めない時の背景色 */
+    background: #f1f5f9;
 }
 
 .circle-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 画像の比率を保ったまま、円いっぱいに表示 */
+    object-fit: cover;
     display: block;
 }
 
 .img-placeholder-circle {
     width: 100%;
     height: 100%;
-    background: #f1f5f9;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #cbd5e1;
     font-size: 0.6rem;
-    font-weight: bold;
 }
 
 .pain-desc {
-    font-size: clamp(0.6rem, 2vw, 0.9rem);
+    font-size: clamp(0.6rem, 1.8vw, 0.85rem);
     color: #64748b;
-    line-height: 1.5;
-    padding: 0 5px;
+    line-height: 1.4;
 }
 
-/* PCモニター時の画像サイズ調整 */
-@media (min-width: 768px) {
-    .circle-image {
-        width: 150px; /* PCでは大きさを固定して安定させる */
-    }
-    .pain-desc {
-        padding: 0 15px;
-    }
-}
-
-
-/* --- 横並び絶対死守設定 (Main Logic) --- */
-.fixed-triple-container {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important; /* スマホでも絶対に縦に落ちない */
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 8px; /* カード間の最小隙間 */
-    width: 100%;
-}
-
-.feature-card, .usage-item {
-    flex: 1; /* 均等3分割 */
-    min-width: 0; /* テキスト量に負けず、枠に合わせて縮小させる */
+/* --- Features Section --- */
+.features { background: #f1f5f9; }
+.feature-card {
+    flex: 1;
+    min-width: 0;
     background: #fff;
-    padding: 20px 8px;
+    padding: 15px 8px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     text-align: center;
 }
 
-/* --- Features Styles --- */
-.features { background: #f1f5f9; }
+.feature-card .icon { font-size: 1rem; color: #3b82f6; font-weight: 700; margin-bottom: 8px; }
+.feature-card h3 { font-size: clamp(0.65rem, 2.3vw, 1rem); color: #1a2a44; margin-bottom: 8px; }
+.feature-card p { font-size: clamp(0.55rem, 1.8vw, 0.8rem); color: #64748b; }
 
-.feature-card .icon {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #3b82f6;
-    margin-bottom: 10px;
-}
-
-.feature-card h3 {
-    font-size: clamp(0.65rem, 2.3vw, 1rem);
-    color: #1a2a44;
-    margin-bottom: 10px;
-    line-height: 1.3;
-}
-
-.feature-card p {
-    font-size: clamp(0.55rem, 1.8vw, 0.85rem);
-    color: #64748b;
-    line-height: 1.4;
-}
-
-/* --- How to Use Styles --- */
+/* --- How to Use Section --- */
 .how-to-use { background: #fff; }
-
-.section-title {
-    text-align: center;
-    font-size: clamp(1.4rem, 4vw, 2rem);
-    margin-bottom: 40px;
-    color: #1a2a44;
-}
-
+.usage-item { flex: 1; min-width: 0; }
 .usage-image-wrapper { margin-bottom: 10px; }
-
-.step-num {
-    display: block;
-    font-size: 0.6rem;
-    font-weight: 700;
-    color: #3b82f6;
-    margin-bottom: 4px;
-}
-
-.usage-text h3 {
-    font-size: clamp(0.65rem, 2.3vw, 1rem);
-    margin-bottom: 8px;
-}
-
-.usage-text p {
-    font-size: clamp(0.55rem, 1.8vw, 0.85rem);
-    color: #64748b;
-}
+.step-num { font-size: 0.6rem; color: #3b82f6; font-weight: 700; display: block; margin-bottom: 4px; }
+.usage-text h3 { font-size: clamp(0.65rem, 2.3vw, 1rem); margin-bottom: 8px; }
+.usage-text p { font-size: clamp(0.55rem, 1.8vw, 0.8rem); color: #64748b; }
 
 /* --- CTA & Footer --- */
-.cta {
-    text-align: center;
-    background: #1a2a44;
-    color: #fff;
-    padding: 80px 20px;
-}
+.cta { text-align: center; background: #1a2a44; color: #fff; padding: 60px 20px; }
+.btn { display: inline-block; padding: 12px 30px; background: #3b82f6; color: #fff; text-decoration: none; border-radius: 4px; font-weight: 700; margin-top: 20px; }
+footer { padding: 30px; text-align: center; font-size: 0.7rem; color: #999; }
 
-.btn {
-    display: inline-block;
-    padding: 15px 40px;
-    background-color: #3b82f6;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 4px;
-    margin-top: 20px;
-    transition: 0.3s;
-}
-
-.btn:hover { background-color: #2563eb; }
-
-footer {
-    padding: 40px;
-    text-align: center;
-    font-size: 0.75rem;
-    color: #999;
-}
-
-/* --- PC Monitor Adjustments --- */
+/* --- PC Adjustments --- */
 @media (min-width: 768px) {
     .container { padding: 100px 40px; }
     .fixed-triple-container { gap: 30px; }
     .feature-card, .usage-item { padding: 40px 20px; }
+    .circle-image { width: 150px; }
 }
