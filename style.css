@@ -82,38 +82,79 @@ header {
     width: 100%;
 }
 
-/* Features */
-.features { background: #f1f5f9; }
+/* --- Features Section (絶対横並び設定) --- */
+.features {
+    background: #f1f5f9;
+    overflow: hidden; /* はみ出し防止 */
+}
+
+.fixed-triple-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap !important; /* 絶対に折り返さない */
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 8px; /* スマホ時の最小隙間 */
+    width: 100%;
+}
 
 .feature-card {
-    width: calc(33.333% - 7px);
-    flex: 0 0 auto;
+    /* どんな状況でも33%幅を維持 */
+    flex: 1 1 33.333%; 
+    min-width: 0; /* flexアイテムの圧縮を許可 */
     background: #fff;
-    padding: 20px 10px;
-    border-radius: 12px;
+    padding: 15px 8px;
+    border-radius: 8px;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
 .feature-card .icon {
-    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    font-size: 1rem;
     font-weight: 700;
     color: #3b82f6;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .feature-card h3 {
-    font-size: clamp(0.7rem, 2.2vw, 1rem);
+    /* 画面幅に合わせて文字サイズを流動的に変更 */
+    font-size: clamp(0.65rem, 2.2vw, 1.1rem);
     color: #1a2a44;
     margin-bottom: 8px;
+    font-weight: 700;
+    line-height: 1.2;
+    /* 改行を許可して枠内に収める */
     word-break: break-all;
+    display: block;
 }
 
 .feature-card p {
-    font-size: clamp(0.6rem, 1.8vw, 0.85rem);
+    /* 画面幅に合わせて文字サイズを流動的に変更 */
+    font-size: clamp(0.55rem, 1.8vw, 0.9rem);
     color: #64748b;
     line-height: 1.4;
 }
 
+/* PCなどの広い画面での調整 */
+@media (min-width: 768px) {
+    .fixed-triple-grid {
+        gap: 25px;
+    }
+    .feature-card {
+        padding: 30px 20px;
+    }
+}
+
+/* スマホ極小画面用の最終調整 */
+@media (max-width: 350px) {
+    .container {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .feature-card {
+        padding: 10px 4px;
+    }
+}
 /* How to Use */
 .how-to-use { background: #fff; }
 .section-title {
