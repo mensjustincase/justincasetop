@@ -119,6 +119,24 @@ header {
     font-size: 0.6rem;
 }
 
+/* 使い方の画像エリアの枠 */
+.usage-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* 四角形の比率を維持 */
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #f1f5f9;
+    margin-bottom: 15px;
+}
+
+/* 中の画像の設定 */
+.step-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 比率を保ったまま枠いっぱいに表示 */
+    display: block;
+}
+
 .pain-desc {
     font-size: clamp(0.6rem, 1.8vw, 0.85rem);
     color: #64748b;
